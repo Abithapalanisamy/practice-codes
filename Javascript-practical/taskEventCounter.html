@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Counter</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: sans-serif;
+        }
+        #counter-value {
+            font-size: 120px;
+            margin: 20px 0;
+        }
+        .button-group {
+            display: flex;
+            gap: 15px;
+        }
+        button {
+            padding: 10px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter Task</h1>
+    <div id="counter-value">0</div>
+    <div class="button-group">
+        <button class="btn-dec" onclick="handleDecrement()">DECREMENT</button>
+        <button class="btn-res" onclick="handleReset()">RESET</button>
+        <button class="btn-inc" onclick="handleIncrement()">INCREMENT</button>
+    </div>
+    <script>
+        let count = 0;
+        const display = document.getElementById('counter-value');
+        function handleDecrement() {
+            count--;
+            updateDisplay();
+        }
+        function handleIncrement() {
+            count++;
+            updateDisplay();
+        }
+        function handleReset() {
+            count = 0;
+            updateDisplay();
+        }
+        function updateDisplay() {
+            display.textContent = count;
+        }
+    </script>
+</body>
+</html>

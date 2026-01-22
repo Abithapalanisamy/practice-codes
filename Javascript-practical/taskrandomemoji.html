@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 400px;
+            width: 400px;
+            border: 2px solid black;
+            margin: auto;
+            font-size: 180px;
+        }
+        button{
+            display: block;
+            margin: auto;
+            font-size: 24px;
+            padding: 10px 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="emojiContainer">
+        😉
+    </div>
+    <button onclick="randomEmojis()">Change Emoji</button>
+
+    <script>
+        let emojis=  [
+  "😀","😎","🤖","👻","🎃","🦄","🐉","🐙","🦋","🌈",
+  "🔥","⚡","🌙","⭐","☀️","🍀","🍕","🍣","🍩","🍎",
+  "🎸","🎮","🎲","🎯","🚀","🛸","🚗","🚲","✈️","🗺️",
+  "🏆","⚽","🏀","🎾","🎧","📸","📚","✏️","🧠","💡",
+  "🔑","🕰️","🧭","🪐","🪴","🪄","🧩","🎈","🎉","💎"
+];
+let container = document.querySelector('.emojiContainer');
+function randomEmojis() {
+    let randomIndex = Math.floor(Math.random()*emojis.length)
+    container.innerHTML = emojis[randomIndex]
+}
+    </script>
+</body>
+</html>

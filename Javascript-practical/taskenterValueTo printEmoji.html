@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emoji Printer</title>
+</head>
+ <style>
+        ul {
+            list-style: none;   
+        }
+        li {
+            font-size: 150px;       
+        }
+    </style>
+<body>
+
+<script>
+    const emojis = [
+      "😀", "😁", "😂", "🤣", "😊", "😍", "😎", "🤩", "😘", "😜",
+      "🤔", "😴", "😢", "😭", "😡", "🤯", "😱", "🥳", "😇", "🙃",
+      "👍", "👎", "👏", "🙏", "❤", "🔥", "✨", "🎉", "💯", "🚀",
+      "🌈", "🌟", "🎈", "🎶", "🍕", "🍔", "🍎", "☕", "⚡", "🌍",
+      "🐶", "🐱", "🦄", "🐼", "🌸", "🌼", "🌙", "⭐", "💡", "📌"
+    ];
+
+    let n = parseInt(prompt("Enter number of emojis to print:"));
+
+
+    let ul = document.createElement("ul");
+    ul.style.fontSize = "30px";
+
+    if (isNaN(n) || n <= 0) {
+        alert("Invalid number!");
+    } else {
+        emojis.slice(0, n).forEach(emoji => {
+            let li = document.createElement("li");
+            li.textContent = emoji;
+            ul.appendChild(li);
+        });
+        document.body.appendChild(ul);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+ <!-- ! Promise  -->
+ <!-- Promise is an object in js which is used to handle asynchronous result(completion or failure) of an ynchronous operation 
+ Promise is like a placeholder for a value which might not be immediately available (the value which ll come in future )
+ whenever we make a http request to the server , server will return a promise as a response  ! state of the promise 
+ !1. pending -> it is the initial state of the promise , Neither the promise is fulfilled nor it is jected 
+ !2. fulfilled -> we have received the response successfully from the promise 
+ !3. rejected -> if the request has been rejected , due to some error on client side or server side  ! methods to handle the promise 
+ 1. then -> then method is used to handle the fulfilled state of the promise 
+ 2. catch -> catch method is used to handle the rejected state of the promise 
+ 3. finally -> finally method will be executed in both the state , if promise is resolved or rejected  -->
+
+<!-- creating a promise  -->
+let p1 = new Promise((res , rej)=>{
+    let random = Math.round(Math.random()*10)
+    console.log(random);
+    
+    setTimeout(()=>{
+        if(random>4){
+         res([20 , 30 , 40])
+        }else{ 
+            rej('This is the error from server')
+        }
+    } , 5000)
+})
+console.log(p1);
+p1.then((data)=>{
+    console.log('Then method');
+    console.log(data);
+}).catch((err)=>{
+    console.log('Catch');
+    console.log(err);
+}).finally(()=>{
+    console.log('finally');
+})
+
+console.log('Bye');
+
+
+// promise chaining
+// whenever we have to handle multiple promise one after another we can use promise chaining
+// ! asyn await
+// these are the keywords in js, they 
